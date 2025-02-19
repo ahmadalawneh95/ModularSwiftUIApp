@@ -726,7 +726,7 @@
 		A31F80F12D661020000B0733 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModel.swift; path = ../View/ViewModel.swift; sourceTree = "<group>"; };
 		A31F80FE2D6625A9000B0733 /* APICLIENT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICLIENT.swift; sourceTree = "<group>"; };
 		A31F80FF2D6625A9000B0733 /* AUTHORIZATIONS_TYPES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUTHORIZATIONS_TYPES.swift; sourceTree = "<group>"; };
-		A31F81002D6625A9000B0733 /* ENVIROMENT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENVIROMENT.swift; sourceTree = "<group>"; };
+		A31F81002D6625A9000B0733 /* ENVIROMENT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ENVIROMENT.swift; path = ../NETWORK/ENVIROMENT.swift; sourceTree = "<group>"; };
 		A31F81012D6625A9000B0733 /* REQUESTS_METHODS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REQUESTS_METHODS.swift; sourceTree = "<group>"; };
 		A31F81022D6625A9000B0733 /* REQUESTS_OPTIONS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REQUESTS_OPTIONS.swift; sourceTree = "<group>"; };
 		A3555E7EFAB9084EE8B57F63930BB049 /* CombineLatest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineLatest.swift; path = RxSwift/Observables/CombineLatest.swift; sourceTree = "<group>"; };
@@ -1292,12 +1292,20 @@
 			children = (
 				A31F80FE2D6625A9000B0733 /* APICLIENT.swift */,
 				A31F80FF2D6625A9000B0733 /* AUTHORIZATIONS_TYPES.swift */,
-				A31F81002D6625A9000B0733 /* ENVIROMENT.swift */,
 				A31F81012D6625A9000B0733 /* REQUESTS_METHODS.swift */,
 				A31F81022D6625A9000B0733 /* REQUESTS_OPTIONS.swift */,
 			);
 			name = NETWORK;
 			path = Sources/NETWORK;
+			sourceTree = "<group>";
+		};
+		A31F81092D662641000B0733 /* ENVIROMENT */ = {
+			isa = PBXGroup;
+			children = (
+				A31F81002D6625A9000B0733 /* ENVIROMENT.swift */,
+			);
+			name = ENVIROMENT;
+			path = Sources/ENVIROMENT;
 			sourceTree = "<group>";
 		};
 		AB59C745E17072BC3E90E890DAC057FC /* Resolver */ = {
@@ -1536,6 +1544,7 @@
 		D5AA8A268AFFD788B96210B9A7F37166 /* NetworkingModule */ = {
 			isa = PBXGroup;
 			children = (
+				A31F81092D662641000B0733 /* ENVIROMENT */,
 				A31F80F32D662555000B0733 /* NETWORK */,
 				D279CB2D35C9AE86F35E1ABF5576878F /* Pod */,
 				6C1A27E525C83CE58597D0EE6702A0A7 /* Support Files */,
