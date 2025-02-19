@@ -6,15 +6,14 @@
 //
 
 import SwiftUI
+import OnboardingModule
 
 @main
 struct ModularSwiftUIAppApp: App {
     let persistenceController = PersistenceController.shared
-
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            OnboardingView() // Load Onboarding as the first screen
         }
     }
 }

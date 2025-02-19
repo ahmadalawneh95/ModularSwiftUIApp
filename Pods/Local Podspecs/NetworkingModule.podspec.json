@@ -1,0 +1,27 @@
+{
+  "name": "NetworkingModule",
+  "version": "1.0.0",
+  "summary": "A modular networking layer using URLSession",
+  "description": "Custom network layer with RxSwift support",
+  "homepage": "https://github.com/ahmadalawneh95/NetworkingModule",
+  "authors": {
+    "Ahmad Alawneh": "ahmad.cras79@gmail.com"
+  },
+  "platforms": {
+    "ios": "15.0"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "Sources/**/*.{h,m,swift}",
+  "frameworks": "Foundation",
+  "dependencies": {
+    "RxSwift": [
+
+    ]
+  },
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  }
+}

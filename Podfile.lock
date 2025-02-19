@@ -1,7 +1,6 @@
 PODS:
-  - CoreModule (1.0.0):
-    - RxCocoa (~> 6.5)
-    - RxSwift (~> 6.5)
+  - NetworkingModule (1.0.0):
+    - RxSwift
   - OnboardingModule (1.0.0)
   - Resolver (1.5.1)
   - RxCocoa (6.8.0):
@@ -12,9 +11,11 @@ PODS:
   - RxSwift (6.8.0)
 
 DEPENDENCIES:
-  - CoreModule (from `./Modules/CoreModule`)
+  - NetworkingModule (from `./Modules/NetworkingModule`)
   - OnboardingModule (from `./Modules/OnboardingModule`)
   - Resolver (~> 1.5)
+  - RxCocoa
+  - RxSwift
 
 SPEC REPOS:
   trunk:
@@ -24,19 +25,19 @@ SPEC REPOS:
     - RxSwift
 
 EXTERNAL SOURCES:
-  CoreModule:
-    :path: "./Modules/CoreModule"
+  NetworkingModule:
+    :path: "./Modules/NetworkingModule"
   OnboardingModule:
     :path: "./Modules/OnboardingModule"
 
 SPEC CHECKSUMS:
-  CoreModule: adf6860e4b16e55f626be2d863032f6fa3758bf0
-  OnboardingModule: 401ef3e99093140d6de737b3a1f2320acdb7b8ef
+  NetworkingModule: b4c64d6c621d4955ac6ea77189dc2872f543f7ae
+  OnboardingModule: 3d1cfb5bb7302139cdf47657198e6d19e83a0359
   Resolver: 0e2ce51257e9366c54afe1b9e9be25059e9b9300
   RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
   RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
   RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
 
-PODFILE CHECKSUM: c020f019041441a8c823c30ebf74d81caaa219a2
+PODFILE CHECKSUM: f1562673f59a10a9bdddd62fbe9a00c050aeeca8
 
 COCOAPODS: 1.16.2

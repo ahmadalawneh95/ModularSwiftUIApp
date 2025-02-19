@@ -7,8 +7,16 @@ target 'ModularSwiftUIApp' do
 
   # Pods for ModularSwiftUIApp
 
-  pod 'CoreModule', :path => './Modules/CoreModule'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
+  # Networking Module
+  pod 'NetworkingModule', :path => './Modules/NetworkingModule'
+
+  # Onboarding Module
   pod 'OnboardingModule', :path => './Modules/OnboardingModule'
+
+  
   pod 'Resolver', '~> 1.5'
 
   target 'ModularSwiftUIAppTests' do
