@@ -206,6 +206,7 @@
 		A31F80CC2D6608A1000B0733 /* AUTHORIZATIONS_TYPES.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F80C92D6608A1000B0733 /* AUTHORIZATIONS_TYPES.swift */; };
 		A31F80CE2D660911000B0733 /* REQUESTS_OPTIONS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F80CD2D660911000B0733 /* REQUESTS_OPTIONS.swift */; };
 		A31F80D02D66096C000B0733 /* APICLIENT.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F80CF2D66096C000B0733 /* APICLIENT.swift */; };
+		A31F80D22D660B3C000B0733 /* ENVIROMENT.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F80D12D660B3C000B0733 /* ENVIROMENT.swift */; };
 		A3441F0A6DA8DDBB405DC743C1D3320B /* RecursiveLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E95DE3EE95E02778A0E508A8101869 /* RecursiveLock.swift */; };
 		A394C9F23A3C79CCFDA88C40B54B75FD /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F010E72CA949AA8CFF36F37B42AB39 /* DispatchQueue+Extensions.swift */; };
 		A3BBC73996CA298B4EA9D0815793026B /* Concat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E61EFF1BC90BD650434116718C3B1A /* Concat.swift */; };
@@ -722,6 +723,7 @@
 		A31F80CA2D6608A1000B0733 /* REQUESTS_METHODS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = REQUESTS_METHODS.swift; path = Sources/REQUESTS_METHODS.swift; sourceTree = "<group>"; };
 		A31F80CD2D660911000B0733 /* REQUESTS_OPTIONS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = REQUESTS_OPTIONS.swift; path = Sources/REQUESTS_OPTIONS.swift; sourceTree = "<group>"; };
 		A31F80CF2D66096C000B0733 /* APICLIENT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APICLIENT.swift; path = Sources/APICLIENT.swift; sourceTree = "<group>"; };
+		A31F80D12D660B3C000B0733 /* ENVIROMENT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ENVIROMENT.swift; path = Sources/ENVIROMENT.swift; sourceTree = "<group>"; };
 		A3555E7EFAB9084EE8B57F63930BB049 /* CombineLatest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineLatest.swift; path = RxSwift/Observables/CombineLatest.swift; sourceTree = "<group>"; };
 		A3F010E72CA949AA8CFF36F37B42AB39 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Extensions.swift"; path = "Platform/DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 		A442DC29847AF05F1AC37B1DFD1BC473 /* NSView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSView+Rx.swift"; path = "RxCocoa/macOS/NSView+Rx.swift"; sourceTree = "<group>"; };
@@ -1161,6 +1163,7 @@
 		4015A56B3745F76B7EF2E4B4FC6AE3D0 /* NetworkingModule */ = {
 			isa = PBXGroup;
 			children = (
+				A31F80D12D660B3C000B0733 /* ENVIROMENT.swift */,
 				A31F80CF2D66096C000B0733 /* APICLIENT.swift */,
 				A31F80CD2D660911000B0733 /* REQUESTS_OPTIONS.swift */,
 				A31F80C92D6608A1000B0733 /* AUTHORIZATIONS_TYPES.swift */,
@@ -2374,6 +2377,7 @@
 				A31F80CE2D660911000B0733 /* REQUESTS_OPTIONS.swift in Sources */,
 				60EADB3445E9341F83E78A131DB22D61 /* NetworkingModule-dummy.m in Sources */,
 				A31F80CB2D6608A1000B0733 /* REQUESTS_METHODS.swift in Sources */,
+				A31F80D22D660B3C000B0733 /* ENVIROMENT.swift in Sources */,
 				A31F80CC2D6608A1000B0733 /* AUTHORIZATIONS_TYPES.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
