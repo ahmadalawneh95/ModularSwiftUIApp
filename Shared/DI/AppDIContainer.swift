@@ -10,7 +10,6 @@ import CoreModule
 
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
-        APIClient().shared.requestSceneSessionRefresh(<#T##UISceneSession#>)
         register { APIClient() as APIClientProtocol }
     }
 }
