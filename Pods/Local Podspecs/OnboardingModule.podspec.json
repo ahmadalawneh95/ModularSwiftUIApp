@@ -1,0 +1,25 @@
+{
+  "name": "OnboardingModule",
+  "version": "1.0.0",
+  "summary": "Onboarding feature module.",
+  "description": "This module provides the onboarding experience for the app, helping users get started with the app's features.",
+  "homepage": "https://github.com/yourusername/OnboardingModule",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Your Name": "your.email@example.com"
+  },
+  "platforms": {
+    "ios": "14.0"
+  },
+  "swift_versions": "5.0",
+  "source": {
+    "git": "https://github.com/yourusername/OnboardingModule.git",
+    "tag": "1.0.0"
+  },
+  "resources": "Resources/**/*",
+  "source_files": "Modules/CoreModule/**/*.{h,m,swift}",
+  "swift_version": "5.0"
+}

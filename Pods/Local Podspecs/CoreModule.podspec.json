@@ -1,0 +1,32 @@
+{
+  "name": "CoreModule",
+  "version": "1.0.0",
+  "summary": "Core module for the project.",
+  "description": "This is the core module that provides essential functionality for the app.",
+  "homepage": "https://github.com/yourusername/CoreModule",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Your Name": "your.email@example.com"
+  },
+  "platforms": {
+    "ios": "14.0"
+  },
+  "swift_versions": "5.0",
+  "source": {
+    "path": "."
+  },
+  "source_files": "Modules/CoreModule/**/*.{h,m,swift}",
+  "resources": "Modules/CoreModule/Resources/**/*",
+  "dependencies": {
+    "RxSwift": [
+      "~> 6.5"
+    ],
+    "RxCocoa": [
+      "~> 6.5"
+    ]
+  },
+  "swift_version": "5.0"
+}

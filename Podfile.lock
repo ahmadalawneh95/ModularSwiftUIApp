@@ -1,0 +1,42 @@
+PODS:
+  - CoreModule (1.0.0):
+    - RxCocoa (~> 6.5)
+    - RxSwift (~> 6.5)
+  - OnboardingModule (1.0.0)
+  - Resolver (1.5.1)
+  - RxCocoa (6.8.0):
+    - RxRelay (= 6.8.0)
+    - RxSwift (= 6.8.0)
+  - RxRelay (6.8.0):
+    - RxSwift (= 6.8.0)
+  - RxSwift (6.8.0)
+
+DEPENDENCIES:
+  - CoreModule (from `./Modules/CoreModule`)
+  - OnboardingModule (from `./Modules/OnboardingModule`)
+  - Resolver (~> 1.5)
+
+SPEC REPOS:
+  trunk:
+    - Resolver
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+
+EXTERNAL SOURCES:
+  CoreModule:
+    :path: "./Modules/CoreModule"
+  OnboardingModule:
+    :path: "./Modules/OnboardingModule"
+
+SPEC CHECKSUMS:
+  CoreModule: adf6860e4b16e55f626be2d863032f6fa3758bf0
+  OnboardingModule: 401ef3e99093140d6de737b3a1f2320acdb7b8ef
+  Resolver: 0e2ce51257e9366c54afe1b9e9be25059e9b9300
+  RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
+  RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
+  RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
+
+PODFILE CHECKSUM: c020f019041441a8c823c30ebf74d81caaa219a2
+
+COCOAPODS: 1.16.2
