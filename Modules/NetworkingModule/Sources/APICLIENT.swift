@@ -12,7 +12,14 @@ public class APIClient {
     public static let shared = APIClient()
     private init() {}
 
-    public func request<T: Decodable>(url: URL, method: HTTPMethod, options: RequestOptions? = nil) -> Observable<T> {
+    // Request method with URL, HTTPMethod, and RequestOptions
+    public func request<T: Decodable>(endpoint: URLConfig.Endpoint, method: HTTPMethod, options: RequestOptions? = nil) -> Observable<T> {
+        let urlConfig = URLConfig()
+        
+        // Get the full URL for the endpoint
+        let url = urlConfig.getEndpointURL(for: endpoint)
+        
+        // Return observable for the request
         return Observable.create { observer in
             // Execute pre-request script if provided
             options?.preRequestScript?()
@@ -39,11 +46,12 @@ public class APIClient {
                 request.url = components?.url
             }
 
-            // Add body for POST, PUT, DELETE
+            // Add body for POST, PUT, DELETE methods
             if let body = options?.body, method != .GET {
                 request.httpBody = body
             }
 
+            // Perform the network request
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error = error {
                     observer.onError(error)
@@ -58,6 +66,8 @@ public class APIClient {
                 }
             }
             task.resume()
+            
+            // Return a disposable to cancel the request if needed
             return Disposables.create { task.cancel() }
         }
     }
