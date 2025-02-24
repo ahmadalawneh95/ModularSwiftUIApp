@@ -9,5 +9,6 @@ Pod::Spec.new do |s|
   s.source       = { :path => '.' }
   s.source_files = 'Sources/**/*.{swift}'
   s.frameworks   = 'SwiftUI'
+  s.dependency 'NetworkingModule'
   s.license      = { :type => "MIT", :file => "LICENSE" }
 end

@@ -1,7 +1,8 @@
 PODS:
   - NetworkingModule (1.0.0):
     - RxSwift
-  - OnboardingModule (1.0.0)
+  - OnboardingModule (1.0.0):
+    - NetworkingModule
   - Resolver (1.5.1)
   - RxCocoa (6.8.0):
     - RxRelay (= 6.8.0)
@@ -32,7 +33,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   NetworkingModule: b4c64d6c621d4955ac6ea77189dc2872f543f7ae
-  OnboardingModule: 3d1cfb5bb7302139cdf47657198e6d19e83a0359
+  OnboardingModule: 8f8d0d93e372f7be6bad6c8cc28a3df6c1cf1ce7
   Resolver: 0e2ce51257e9366c54afe1b9e9be25059e9b9300
   RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
   RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705

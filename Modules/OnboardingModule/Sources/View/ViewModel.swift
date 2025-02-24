@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkingModule
 
 
 class OnboardingViewModel: ObservableObject {

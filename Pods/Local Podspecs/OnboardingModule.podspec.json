@@ -15,6 +15,11 @@
   },
   "source_files": "Sources/**/*.{swift}",
   "frameworks": "SwiftUI",
+  "dependencies": {
+    "NetworkingModule": [
+
+    ]
+  },
   "license": {
     "type": "MIT",
     "file": "LICENSE"
