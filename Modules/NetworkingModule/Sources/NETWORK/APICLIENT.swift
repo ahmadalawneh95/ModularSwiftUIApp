@@ -19,6 +19,9 @@ public class APIClient {
         // Get the full URL for the endpoint
         let url = urlConfig.getEndpointURL(for: endpoint)
         
+        // Generate the cURL command before making the actual request
+        printCurlCommand(url: url, method: method, headers: options?.headers, body: options?.body)
+        
         // Return observable for the request
         return Observable.create { observer in
             // Execute pre-request script if provided
@@ -70,5 +73,27 @@ public class APIClient {
             // Return a disposable to cancel the request if needed
             return Disposables.create { task.cancel() }
         }
+    }
+
+    // Function to print cURL command
+    private func printCurlCommand(url: URL, method: HTTPMethod, headers: [String: String]?, body: Data?) {
+        var curlCommand = "curl -X \(method.rawValue) \"\(url.absoluteString)\""
+        
+        // Add headers to cURL command
+        if let headers = headers {
+            for (key, value) in headers {
+                curlCommand += " -H \"\(key): \(value)\""
+            }
+        }
+
+        // Add body to cURL command if exists (for POST/PUT/DELETE requests)
+        if let body = body {
+            if let bodyString = String(data: body, encoding: .utf8) {
+                curlCommand += " -d \"\(bodyString)\""
+            }
+        }
+        
+        // Print the cURL command
+        print("Generated cURL command: \(curlCommand)")
     }
 }

@@ -7,6 +7,8 @@
 
 import Foundation
 
+//https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-summary
+//https://yahoo-finance-real-time1.p.rapidapi.com/market/get-summary?region=US
 // Enum to represent different environments (Schemes)
 public enum Environment {
     case production
@@ -17,11 +19,11 @@ public enum Environment {
     var baseURL: String {
         switch self {
         case .production:
-            return "https://api.production.com"
+            return "https://yahoo-finance-real-time1.p.rapidapi.com/"
         case .staging:
-            return "https://api.staging.com"
+            return "https://yahoo-finance-real-time1.p.rapidapi.com/"
         case .development:
-            return "https://api.development.com"
+            return "https://yahoo-finance-real-time1.p.rapidapi.com/"
         }
     }
 }
@@ -34,19 +36,16 @@ public struct URLConfig {
 
     // Define the endpoints for each environment
     public enum Endpoint {
-        case users
-        case posts
-        case comments
+        case market
+        case stock
 
         // Method to return the full URL for each endpoint
         func url(withBaseURL baseURL: String) -> URL {
             switch self {
-            case .users:
-                return URL(string: baseURL + "/users")!
-            case .posts:
-                return URL(string: baseURL + "/posts")!
-            case .comments:
-                return URL(string: baseURL + "/comments")!
+            case .market:
+                return URL(string: baseURL + "market/get-summary")!
+            case .stock:
+                return URL(string: baseURL + "stock/get-summary")!
             }
         }
     }
