@@ -4,9 +4,10 @@ import RxSwift
 
 class StockViewModel: ObservableObject {
     @Published var marketSummary: MarketSummaryResponse?
+    @Published  var stockDetail: Stock?
     private let disposeBag = DisposeBag() // Keep DisposeBag as a property
 
-    func getStocks() {
+    func getMarketSummary() {
         let options = RequestOptions(
             headers: ["x-rapidapi-key": "xn7im5uD2fmshoCcOEonH8PMIePMp1WbtYAjsnE0v5SXTBGoXx",
                       "x-rapidapi-host": "yahoo-finance-real-time1.p.rapidapi.com"],
@@ -16,8 +17,8 @@ class StockViewModel: ObservableObject {
         APIClient.shared.request(endpoint: .market, method: .GET, options: options)
             .observe(on: MainScheduler.instance) // Ensure UI updates happen on the main thread
             .subscribe(
-                onNext: { [weak self] (stocks: MarketSummaryResponse) in
-                    self?.marketSummary = stocks
+                onNext: { [weak self] (marketSummary: MarketSummaryResponse) in
+                    self?.marketSummary = marketSummary
                 },
                 onError: { error in
                     print("Error: \(error)")
@@ -25,25 +26,27 @@ class StockViewModel: ObservableObject {
             )
             .disposed(by: disposeBag)
     }
-}
-// MARK: - Stocks
-struct MarketSummaryResponse: Codable {
-    let marketSummaryResponse: MarketSummaryResult?
-}
+    
+    func getStocks(symbol: String, completion: @escaping (Result<Stock, Error>) -> Void) {
+        let options = RequestOptions(
+            headers: ["x-rapidapi-key": "xn7im5uD2fmshoCcOEonH8PMIePMp1WbtYAjsnE0v5SXTBGoXx",
+                      "x-rapidapi-host": "yahoo-finance-real-time1.p.rapidapi.com"],
+            parameters: ["lang":"en-US","symbol":symbol,"region": "US"]
+        )
 
-struct MarketSummaryResult: Codable {
-    let result: [MarketSummary]?
-}
+        APIClient.shared.request(endpoint: .stock, method: .GET, options: options)
+            .observe(on: MainScheduler.instance) // Ensure UI updates happen on the main thread
+            .subscribe(
+                onNext: { [weak self] (stocks: Stock) in
+                    self?.stockDetail = stocks
+                    completion(.success(stocks)) // Success case: return the fetched Stock object
+                },
+                onError: { error in
+                    print("Error: \(error)")
+                    completion(.failure(error)) // Failure case: return the error
+                }
+            )
+            .disposed(by: disposeBag)
+    }
 
-struct MarketSummary: Identifiable, Codable {
-    let id = UUID()
-    let symbol: String?
-    let shortName: String?
-    let regularMarketPrice: NumericValue?
-    let regularMarketChangePercent: NumericValue?
-}
-
-struct NumericValue: Codable {
-    let raw: Double?
-    let fmt: String?
 }
