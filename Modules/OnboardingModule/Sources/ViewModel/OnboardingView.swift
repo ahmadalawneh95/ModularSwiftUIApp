@@ -10,6 +10,8 @@ import Combine
 import NetworkingModule
 
 public struct OnboardingView: View {
+    @SwiftUI.Environment(\.colorScheme) private var colorScheme
+
     @StateObject private var viewModel = StockViewModel()
     @StateObject private var loaderManager = LoaderManager()
     @State private var searchText = ""
@@ -18,6 +20,7 @@ public struct OnboardingView: View {
     @State private var selectedStockSymbol: String?
     @State private var isLoading = true
 
+    
     public init() {}
 
     public var body: some View {
@@ -88,11 +91,15 @@ public struct OnboardingView: View {
                 .hidden()
 
                 if loaderManager.isLoading {
-                    Color.black.opacity(0.4)
+                    // Responsive overlay background
+                    Color.black.opacity(colorScheme == .dark ? 0.6 : 0.4)
                         .edgesIgnoringSafeArea(.all)
+                    
+                    // Responsive ProgressView styling
                     ProgressView("Loading...")
                         .padding()
-                        .background(Color.white)
+                        .background(colorScheme == .dark ? Color(.systemGray5) : Color.white)
+                        .foregroundColor(colorScheme == .dark ? .white : .primary)
                         .cornerRadius(10)
                 }
             }
