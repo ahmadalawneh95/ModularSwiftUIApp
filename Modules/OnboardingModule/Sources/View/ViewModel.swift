@@ -16,9 +16,9 @@ class StockViewModel: ObservableObject {
     private let disposeBag = DisposeBag()
     public var loaderManager = LoaderManager()
 
-    func getMarketSummary() {
+    func getMarketSummary(completion: ((Result<Bool, Error>) -> Void)? = nil) {
         let options = RequestOptions(
-            headers: ["x-rapidapi-key": "3209d7c0cbmshbfa72a219b93dbap1be356jsn1854c03414a7",
+            headers: ["x-rapidapi-key": "3d0179bc9fmsh358ed0291a80740p1cd0bejsn8ea1e148cf1c",
                       "x-rapidapi-host": "yahoo-finance-real-time1.p.rapidapi.com"],
             parameters: ["region": "US"]
         )
@@ -28,9 +28,11 @@ class StockViewModel: ObservableObject {
             .subscribe(
                 onNext: { [weak self] (marketSummary: MarketSummaryResponse) in
                     self?.marketSummary = marketSummary
+                    completion?(.success(true))
                 },
                 onError: { error in
                     print("Error: \(error)")
+                    completion?(.failure(error))
                 }
             )
             .disposed(by: disposeBag)
@@ -38,7 +40,7 @@ class StockViewModel: ObservableObject {
     
     func getStocks(symbol: String, completion: @escaping (Result<Stock, Error>) -> Void) {
         let options = RequestOptions(
-            headers: ["x-rapidapi-key": "3209d7c0cbmshbfa72a219b93dbap1be356jsn1854c03414a7",
+            headers: ["x-rapidapi-key": "3d0179bc9fmsh358ed0291a80740p1cd0bejsn8ea1e148cf1c",
                       "x-rapidapi-host": "yahoo-finance-real-time1.p.rapidapi.com"],
             parameters: ["lang":"en-US","symbol":symbol,"region": "US"]
         )

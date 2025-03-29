@@ -66,17 +66,21 @@ public struct OnboardingView: View {
                 }
                 .onAppear {
                     print("Fetching market summary...")
-                    viewModel.getMarketSummary()
+                    viewModel.getMarketSummary(completion: {result in
+                        switch result {
+                        case .success(_):
+                            isLoading = false
+                        case .failure(let error):
+                            print(error)
+                        }
+                        
+                    })
                     timer = Timer.publish(every: 8, on: .main, in: .common)
                         .autoconnect()
                         .sink { _ in
                             print("Refreshing market summary...")
-                            viewModel.getMarketSummary()
+                            viewModel.getMarketSummary(completion: nil)
                         }
-
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        isLoading = false
-                    }
                 }
                 .onDisappear {
                     timer?.cancel()
