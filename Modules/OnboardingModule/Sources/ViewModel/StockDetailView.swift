@@ -14,13 +14,11 @@ struct StockDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                // Extract optional values at the beginning
                 let companyName = viewModel?.stockDetail?.quoteType?.longName ?? "Unknown"
                 let currentPrice = viewModel?.stockDetail?.price?.regularMarketPrice ?? 0.0
                 let priceChange = viewModel?.stockDetail?.price?.regularMarketChange ?? 0.0
                 let priceChangePercent = viewModel?.stockDetail?.price?.regularMarketChangePercent ?? 0.0
                 
-                // Header with price info
                 VStack(alignment: .leading) {
                     Text(companyName)
                         .font(.title)
@@ -39,13 +37,11 @@ struct StockDetailView: View {
                 }
                 .padding(.bottom)
                 
-                // Key stats
                 let low52Week = viewModel?.stockDetail?.summaryDetail?.fiftyTwoWeekLow ?? 0.0
                 let high52Week = viewModel?.stockDetail?.summaryDetail?.fiftyTwoWeekHigh ?? 0.0
                 let averageVolume = viewModel?.stockDetail?.summaryDetail?.regularMarketVolume ?? 0
                 
                 VStack(spacing: 12) {
-                    // 52 Week Range
                     HStack {
                         Text("52 Week Range")
                         Spacer()
@@ -53,7 +49,6 @@ struct StockDetailView: View {
                             .bold()
                     }
                     
-                    // Avg Volume
                     HStack {
                         Text("Avg Volume")
                         Spacer()
@@ -65,7 +60,6 @@ struct StockDetailView: View {
                 .background(Color(.systemGray6))
                 .cornerRadius(10)
                 
-                // About section
                 let about = viewModel?.stockDetail?.summaryProfile?.industry ?? "No description available."
                 
                 VStack(alignment: .leading, spacing: 8) {

@@ -1,3 +1,11 @@
+//
+//  ViewModel.swift
+//  Pods
+//
+//  Created by Ahmad Alawneh on 28/03/2025.
+//
+
+
 import Foundation
 import NetworkingModule
 import RxSwift
@@ -5,8 +13,8 @@ import RxSwift
 class StockViewModel: ObservableObject {
     @Published var marketSummary: MarketSummaryResponse?
     @Published  var stockDetail: Stock?
-    private let disposeBag = DisposeBag() // Keep DisposeBag as a property
-    public let loaderManager = LoaderManager() // Instance of LoaderManager
+    private let disposeBag = DisposeBag()
+    public var loaderManager = LoaderManager()
 
     func getMarketSummary() {
         let options = RequestOptions(

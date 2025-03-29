@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		53B769CC6F4A8351669E128B /* Pods_ModularSwiftUIAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43632DE3E6271AA2651AC01 /* Pods_ModularSwiftUIAppTests.framework */; };
 		995A5734B78B29324AC63DE3 /* Pods_ModularSwiftUIApp_ModularSwiftUIAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7687A5450C50DFCF9123D040 /* Pods_ModularSwiftUIApp_ModularSwiftUIAppUITests.framework */; };
+		A3F163B72D97787400F36F41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F163B62D97787300F36F41 /* AppDelegate.swift */; };
 		ED5CCC2FB1262355ACA4EACF /* Pods_ModularSwiftUIApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BD227712363504125E6031 /* Pods_ModularSwiftUIApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		A3B5D8CB2D6550EC008AE613 /* ModularSwiftUIAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModularSwiftUIAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B5D8D52D6550EC008AE613 /* ModularSwiftUIAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModularSwiftUIAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B5D91E2D655540008AE613 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		A3F163B62D97787300F36F41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B060D8CB4FF189FE461F815A /* Pods-ModularSwiftUIAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModularSwiftUIAppTests.release.xcconfig"; path = "Target Support Files/Pods-ModularSwiftUIAppTests/Pods-ModularSwiftUIAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		B5B6C5BA444C9858368181A0 /* Pods-ModularSwiftUIAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModularSwiftUIAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ModularSwiftUIAppTests/Pods-ModularSwiftUIAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F43632DE3E6271AA2651AC01 /* Pods_ModularSwiftUIAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ModularSwiftUIAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,22 +50,16 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A3B5D8B82D6550EB008AE613 /* ModularSwiftUIApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = ModularSwiftUIApp;
 			sourceTree = "<group>";
 		};
 		A3B5D8CE2D6550EC008AE613 /* ModularSwiftUIAppTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = ModularSwiftUIAppTests;
 			sourceTree = "<group>";
 		};
 		A3B5D8D82D6550EC008AE613 /* ModularSwiftUIAppUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = ModularSwiftUIAppUITests;
 			sourceTree = "<group>";
 		};
@@ -123,6 +119,7 @@
 		A3B5D8AD2D6550EB008AE613 = {
 			isa = PBXGroup;
 			children = (
+				A3F163B62D97787300F36F41 /* AppDelegate.swift */,
 				A3B5D91C2D655532008AE613 /* Shared */,
 				A3B5D8B82D6550EB008AE613 /* ModularSwiftUIApp */,
 				A3B5D8CE2D6550EC008AE613 /* ModularSwiftUIAppTests */,
@@ -405,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F163B72D97787400F36F41 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

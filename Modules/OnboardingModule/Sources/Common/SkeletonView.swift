@@ -1,5 +1,5 @@
 //
-//  Stock.swift
+//  SkeletonView.swift
 //  Pods
 //
 //  Created by Ahmad Alawneh on 28/03/2025.

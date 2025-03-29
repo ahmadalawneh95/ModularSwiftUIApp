@@ -1,3 +1,10 @@
+//
+//  OnboardingView.swift
+//  Pods
+//
+//  Created by Ahmad Alawneh on 28/03/2025.
+//
+
 import SwiftUI
 import Combine
 import NetworkingModule
@@ -9,7 +16,7 @@ public struct OnboardingView: View {
     @State private var timer: AnyCancellable?
     @State private var isNavigating = false
     @State private var selectedStockSymbol: String?
-    @State private var isLoading = true // ✅ Track loading state
+    @State private var isLoading = true
 
     public init() {}
 
@@ -26,10 +33,8 @@ public struct OnboardingView: View {
                         .padding()
 
                     if isLoading {
-                        // ✅ Show Skeleton Loader
                         SkeletonView()
                     } else {
-                        // ✅ Show actual data once loaded
                         if let stocks = viewModel.marketSummary?.marketSummaryResponse?.result, !stocks.isEmpty {
                             List(stocks.filter { stock in
                                 searchText.isEmpty || (stock.shortName?.lowercased().contains(searchText.lowercased()) ?? false)
@@ -53,22 +58,19 @@ public struct OnboardingView: View {
                         }
                     }
 
-                    Button("Continue") {
-                        print("Onboarding Completed")
-                    }
-                    .padding()
+                
+                    
                 }
                 .onAppear {
                     print("Fetching market summary...")
                     viewModel.getMarketSummary()
-                    timer = Timer.publish(every: 8, on: .main, in: .common)
-                        .autoconnect()
-                        .sink { _ in
-                            print("Refreshing market summary...")
-                            viewModel.getMarketSummary()
-                        }
+//                    timer = Timer.publish(every: 8, on: .main, in: .common)
+//                        .autoconnect()
+//                        .sink { _ in
+//                            print("Refreshing market summary...")
+//                            viewModel.getMarketSummary()
+//                        }
 
-                    // ✅ Delay setting isLoading to false when data is received
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         isLoading = false
                     }
@@ -120,6 +122,11 @@ public struct OnboardingView: View {
     }
 }
 
+
+
+
 #Preview {
     OnboardingView()
 }
+
+
