@@ -67,12 +67,12 @@ public struct OnboardingView: View {
                 .onAppear {
                     print("Fetching market summary...")
                     viewModel.getMarketSummary()
-//                    timer = Timer.publish(every: 8, on: .main, in: .common)
-//                        .autoconnect()
-//                        .sink { _ in
-//                            print("Refreshing market summary...")
-//                            viewModel.getMarketSummary()
-//                        }
+                    timer = Timer.publish(every: 8, on: .main, in: .common)
+                        .autoconnect()
+                        .sink { _ in
+                            print("Refreshing market summary...")
+                            viewModel.getMarketSummary()
+                        }
 
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         isLoading = false
